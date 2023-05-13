@@ -26,25 +26,25 @@ onStart
     vars.finalMove = false;
 }
 
-start
-{
-    // Start 4 seconds after onCursorEvent becomes nonzero. Accuracy seems to vary within about 50ms (3 frames)
-    if (current.chapterIndex == 0 && current.levelIndex == 0)
-    {
-        if (old.onCursorEvent == 0 && current.onCursorEvent != 0)
-        {
-            vars.inputActiveTime = DateTime.Now;
-            vars.startTriggered = true;
-        }
+// start
+// {
+//     // Start 4 seconds after onCursorEvent becomes nonzero. Accuracy seems to vary within about 50ms (3 frames)
+//     if (current.chapterIndex == 0 && current.levelIndex == 0)
+//     {
+//         if (old.onCursorEvent == 0 && current.onCursorEvent != 0)
+//         {
+//             vars.inputActiveTime = DateTime.Now;
+//             vars.startTriggered = true;
+//         }
 
-        if (vars.startTriggered && DateTime.Now >= vars.inputActiveTime.Add(TimeSpan.FromSeconds(4))) 
-        {
-            vars.startTriggered = false;
-            return true;
-        }
-    }
-    return false;
-}
+//         if (vars.startTriggered && DateTime.Now >= vars.inputActiveTime.Add(TimeSpan.FromSeconds(4))) 
+//         {
+//             vars.startTriggered = false;
+//             return true;
+//         }
+//     }
+//     return false;
+// }
 
 update
 {
